@@ -1,6 +1,25 @@
 Rails.application.routes.draw do
+  get 'apartments/new'
+
+  get 'apartments/show'
+
+  get 'apartments/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'reservations/new'
+
+  get 'reservations/show'
+
+  get 'pages/home'
+
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  root to: "pages#home"
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
