@@ -1,2 +1,8 @@
-<h1>Apartments#index</h1>
-<p>Find me in app/views/apartments/index.html.erb</p>
+<h1>All apartments</h1>
+<% @apartments.each do |apartment| %>
+  <p><%= apartment.title %></p>
+  <p><%= apartment.address %></p>
+  <p><%= apartment.price %></p>
+  <p><%= apartment.published %></p>
+  <p><%= apartment.capacity %></p>
+<%end%>

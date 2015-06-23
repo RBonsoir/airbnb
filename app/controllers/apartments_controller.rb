@@ -1,4 +1,5 @@
 class ApartmentsController < ApplicationController
+  skip_before_action :authenticate_user!
   def new
   end
 
@@ -6,6 +7,7 @@ class ApartmentsController < ApplicationController
   end
 
   def index
+    @apartments = Apartment.all
   end
 end
 
