@@ -1,16 +1,23 @@
 class ApartmentsController < ApplicationController
-  skip_before_action :authenticate_user!
+  before_action :find_apartment, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @apartment = Apartment.new
   end
 
   def create
-    @apartment = Apartment.new
-    @apartment.save
-    redirect_to 'root_path'
+    @user = User.find(params[:user_id])
+    @apartment = Apartment.new(apartment_params)
+    @apartment.user = current_user
+    if @apartment.save
+      redirect_to apartment_path(@apartment)
+    else
+      render 'apartments/new'
+    end
   end
 
   def show
+
   end
 
   def index
@@ -28,7 +35,7 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
   end
 
-  def post_params
+  def apartment_params
     params.require(:apartment).permit(:title, :address, :price, :picture)
   end
 end

@@ -6,6 +6,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Apartment.create!(title: "Cosy apartment", description: "very pretty", address: "rue des haies", price: "30EUR")
-Apartment.create!(title: "Trendy apartment", description: "very pretty", address: "rue des haies", price: "30EUR")
-Apartment.create!(title: "Awesome apartment", description: "very pretty", address: "rue des haies", price: "30EUR")
+u = User.create(name: "Josh", email: "adhasdhjwl@jhfif.com", password: "jalsfsaw")
+u2 = User.create(name: "Irene", email: "hello@email.org", password: "jalsfsae")
+
+a1 = Apartment.new(title: "Cosy apartment", description: "very pretty", address: "rue des haies", price: "30EUR")
+a1.user = u
+a1.save
+a2 = Apartment.new(title: "Trendy apartment", description: "very pretty", address: "rue des haies", price: "30EUR")
+a2.user = u
+a2.save
+a3 = Apartment.new(title: "Awesome apartment", description: "very pretty", address: "rue des haies", price: "30EUR")
+a3.user = u2
+a3.save

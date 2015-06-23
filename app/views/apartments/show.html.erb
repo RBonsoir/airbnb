@@ -1,2 +1,39 @@
-<h1>Apartments#show</h1>
-<p>Find me in app/views/apartments/show.html.erb</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div>
+        <%= image_tag @apartment.picture.url(:medium) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-3">
+      <div class="img-circle text-center">
+        <%= image_tag 'http://lorempixel.com/100/100', class: "img-circle" %>
+      </div>
+      <div class="text-center">
+        <%= @apartment.user.name %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="text-center" id="info-show">
+        <p><%= @apartment.title %></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="text-center" id="info-show">
+        <p><%= @apartment.description %></p>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-3">
+      <div class="text-center" id="info-show">
+        <p><%= @apartment.capacity %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
