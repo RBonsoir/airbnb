@@ -34,6 +34,9 @@ gem 'font-awesome-sass', '~> 4.2.0'
 gem 'devise'
 gem 'omniauth-facebook'
 
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Figaro to protect API keys
 gem 'figaro'
 
