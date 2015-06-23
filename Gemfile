@@ -31,7 +31,11 @@ gem 'puma', group: :production
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.1'
 gem 'font-awesome-sass', '~> 4.2.0'
+gem 'devise'
+gem 'omniauth-facebook'
 
+# Figaro to protect API keys
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
