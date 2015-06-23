@@ -1,8 +1,24 @@
 <h1>All apartments</h1>
-<% @apartments.each do |apartment| %>
-  <p><%= apartment.title %></p>
-  <p><%= apartment.address %></p>
-  <p><%= apartment.price %></p>
-  <p><%= apartment.published %></p>
-  <p><%= apartment.capacity %></p>
-<%end%>
+
+<!-- missing search, set margin from cards properly -->
+<div class="row">
+  <div class="col-xs-6">
+    <% @apartments.each do |apartment| %>
+      <div class="col-sm-2 col-md-6">
+        <div class="card absolute">
+          <%= image_tag apartment.picture.url(:medium) %>
+          <div class="price-tag"><%=apartment.price%> $</div>
+          <div class="thumbnail-description">
+            <%= link_to apartment.title, apartment_path(apartment) %>
+            <p><%= apartment.description%></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-xs-6">
+
+  </div>
+</div>
+
+
