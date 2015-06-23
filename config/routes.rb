@@ -1,19 +1,7 @@
 Rails.application.routes.draw do
-  get 'apartments/new'
 
-  get 'apartments/show'
-
-  get 'apartments/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'reservations/new'
-
-  get 'reservations/show'
-
-  get 'pages/home'
+  resources :apartments
+  resources :reservations
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
