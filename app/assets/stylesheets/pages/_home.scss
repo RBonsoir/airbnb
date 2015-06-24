@@ -1,9 +1,21 @@
 #banner {
-  background-image: image-url ('backgroundny.jpg');
-
-  img {
-    width: 100%;
-  }
+  position: relative;
+  background-image: image-url('backgroundny.jpeg');
+  padding-top: 200px;
+  padding-bottom: 200px;
+  // img {
+  //   width: 100%;
+  //   position: relative;
+  // }
 }
 
 #pages_home .navbar { margin-bottom: 0 }
+
+
+#searchbar {
+  position: absolute
+}
+
+h1 {
+  color: white;
+}
