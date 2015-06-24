@@ -5,8 +5,11 @@
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
 
-body
-
+body {
+  h3 {
+    color: $red;
+  }
+}
  .price-tag {
   position: absolute;
   bottom: 123px;
@@ -46,7 +49,28 @@ body
  }
 
  #info-show {
-  padding: 50px;
+  padding-top: 20px;
+ }
+
+ #heading-show {
+  padding-top: 20px;
+  margin-right: 20px;
+  padding-right: 30px;
+ }
+
+  .button-show {
+    margin-right: 20px;
+    padding-right: 30px;
+    a {
+    margin-top: 50px;
+    background-color: $red;
+    border-color: $red;
+    }
+  }
+
+ .fa {
+  font-size: 40px;
+  padding-top: 15px;
  }
 
  input.button-picture {
@@ -56,4 +80,12 @@ body
 
  .map-center {
   padding: 2em;
+ }
+
+ .img-show {
+  width: 100%;
+ }
+
+ #user-pic-show {
+  padding-top: 20px;
  }

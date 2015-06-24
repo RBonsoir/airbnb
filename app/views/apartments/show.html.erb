@@ -1,37 +1,37 @@
-
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div>
-        <%= image_tag @apartment.picture.url(:medium) %>
-      </div>
-    </div>
-  </div>
+<div class="img-show">
+  <%= image_tag 'http://lorempixel.com/1200/400', class: "img-show" %>
+  <!-- @apartment.picture.url(:large) -->
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-3">
-      <div class="img-circle text-center">
-        <%= image_tag 'http://lorempixel.com/100/100', class: "img-circle" %>
+<div id="info-show">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-3">
+
+        <div class="img-circle text-center" id="user-pic-show">
+          <%= image_tag @apartment.user.picture, class: "img-circle" %>
+        </div>
+        <div class="text-center" id="user-pic-show">
+          <%= @apartment.user.name %>
+        </div>
       </div>
-      <div class="text-center">
-        <%= @apartment.user.name %>
+
+      <div class="col-xs-12 col-md-4">
+        <div id="heading-show">
+          <h3><%= @apartment.title %></h3>
+          <p><%= @apartment.address %></p>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-md-3">
-      <div class="text-center" id="info-show">
-        <p><%= @apartment.title %></p>
+      <div class="col-xs-12 col-md-2">
+        <div>
+          <h3><i class="fa fa-home"></i></h3>
+          <p><%= @apartment.description %></p>
+        </div>
       </div>
-    </div>
-    <div class="col-xs-12 col-md-3">
-      <div class="text-center" id="info-show">
-        <p><%= @apartment.description %></p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-md-3">
-      <div class="text-center" id="info-show">
-        <p><%= @apartment.capacity %></p>
+      <div class="col-xs-12 col-md-2">
+        <div class="button-show">
+          <%= link_to "Book", new_reservation_path, {class: "btn btn-primary"} %>
+        </div>
       </div>
     </div>
   </div>
