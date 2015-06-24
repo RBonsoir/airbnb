@@ -1,5 +1,34 @@
-<h1><%= @user.name %></h1>
-<%= image_tag @user.picture.url(:medium) %>
-<p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+<div class="left-card">
+  <div class="container">
+    <div class="row">
+      <div class= "col-xs-12">
+        <h1><%= @user.name %></h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class= "col-xs-12 col-sm-4">
+          <%= image_tag @user.picture.url(:medium) %>
+        <p><%= link_to "Edit Profile", edit_user_registration_path %></p>
+      </div>
+      <div class= "col-xs-12 col-sm-4">
+        <h3><i class="fa fa-usd"></i>  Rent your flat</h3>
+        <ul>
+          <% current_user.apartments.all.each do |apartment| %>
+            <li><%= link_to apartment.title, apartment_path %></li>
+            <% end %>
+        </ul>
+          <p>List of apartments + ouverture vers proposition de location et possibilité de cocher
+          </p>
+        <p><%= link_to "Add an apartment", new_apartment_path %></p>
 
+      </div>
+      <div class= "col-xs-12 col-sm-4">
+        <h3><i class="fa fa-suitcase"></i>  Your vacation</h3>
+        <p>
+          Insert your vacation requests
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
