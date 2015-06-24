@@ -1,2 +1,19 @@
-<h1>Apartments#new</h1>
-<p>Find me in app/views/apartments/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="text-center">
+        <%= form_for [@apartment] do |f| %>
+          <p><%= f.text_field :title, placeholder: "title" %></p>
+          <p><%= f.text_field :address, placeholder: "address" %></p>
+          <p><%= f.text_field :description, placeholder: "description" %></p>
+          <p><%= f.text_field :capacity, placeholder: "capacity" %></p>
+          <p><%= f.text_field :price, placeholder: "price per night" %></p>
+          <p><%= f.label :picture %></p>
+          <p><%= f.file_field :picture, class: "button-picture" %></p>
+          <p><%= f.submit %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
