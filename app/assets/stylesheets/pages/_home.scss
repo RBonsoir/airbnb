@@ -1,9 +1,23 @@
 #banner {
+  position: relative;
   background-image: image-url ('backgroundny.jpg');
-
+  margin: auto;
   img {
     width: 100%;
   }
 }
 
 #pages_home .navbar { margin-bottom: 0 }
+
+#search_bar {
+  position: absolute;
+  bottom: 50%;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  background: white;
+  font-color: black;
+  border-radius: 4px;
+  text-align: justify;
+  display: inline;
+}
