@@ -1,15 +1,21 @@
 #banner {
   position: relative;
-  background-image: image-url ('backgroundny.jpg');
   margin: auto;
   img {
     width: 100%;
   }
+  background-image: image-url('backgroundny.jpeg');
+  padding-top: 200px;
+  padding-bottom: 200px;
+  // img {
+  //   width: 100%;
+  //   position: relative;
+  // }
 }
 
 #pages_home .navbar { margin-bottom: 0 }
 
-#search_bar {
+#searchbar {
   position: absolute;
   bottom: 50%;
   width: 70%;
@@ -20,4 +26,8 @@
   border-radius: 4px;
   text-align: justify;
   display: inline;
+}
+
+h1 {
+  color: white;
 }
