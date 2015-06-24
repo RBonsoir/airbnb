@@ -5,10 +5,11 @@
 
 // Typography and background
 $font-family-sans-serif:  $base-font;
-$body-bg:                 lighten(#000, 93.5%);
+$body-bg:                 #F5F5F5;
 $font-size-base:          $base-size;
 $line-height-base:        $base-height;
 $headings-font-family:    $header-font;
+$text-color:              #A9A9A9;
 
 // Semantic color scheme
 $brand-primary:   $blue;
@@ -25,7 +26,7 @@ $border-radius-small: 2px;
 // Links style
 $link-hover-decoration: none;
 $link-hover-color: $blue;
-$link-color: $green;
+$link-color: #ff5a5f;
 
 // Grid padding
 $grid-gutter-width: 0 ;

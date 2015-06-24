@@ -5,28 +5,44 @@
  * already a Bootstrap SCSS variable that does the same job
  * ------------------------------------- */
 
- .absolute {
-  img {
-    position: absolute;
-  }
- }
+body
 
  .price-tag {
-  position: relative;
-  bottom: -153px;
-  background: white;
-  padding-left: 8px;
-  width: 30%;
+  position: absolute;
+  bottom: 123px;
+  background: rgba(30, 30, 30, 0.9);
+  color: white;
+  padding-left: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 20%;
  }
 
- .thumbnail-description {
-  position: relative;
-  bottom: -153px;
-  padding-top: 40px;
+ .description {
+  padding-top: 20px;
  }
 
  .card {
-  margin: 50px;
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  padding: 10px;
+ }
+
+ .img-card {
+  border-radius: 4px;
+ }
+
+ .form-search {
+  margin-right: 73px;
+ }
+
+ .entire-form {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #DCDCDC;
  }
 
  #info-show {
@@ -36,4 +52,8 @@
  input.button-picture {
   display: inline;
   margin-left: 100px;
+ }
+
+ .map-center {
+  padding: auto;
  }
