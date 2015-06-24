@@ -36,7 +36,7 @@
     <% @apartments.each do |apartment| %>
       <div class="col-sm-2 col-md-6">
         <div class="card">
-          <%= image_tag'http://lorempixel.com/300/300', class: "img-card" %>
+          <%= image_tag "http://lorempixel.com/300/300", class: "img-card" %>
           <div class="description">
             <p><%= link_to apartment.title, apartment_path(apartment) %></p>
             <p><%= apartment.description%></p>
@@ -74,6 +74,7 @@
       </div>
     </div>
   </div>
+</div>
 
 
 <!-- image_tag apartment.picture.url(:medium) -->
