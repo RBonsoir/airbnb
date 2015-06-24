@@ -6,9 +6,9 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @apartment = Apartment.new(apartment_params)
-    @apartment.user = current_user
+    # @user = User.find(params[:user_id])
+    @apartment = current_user.apartments.build(apartment_params)
+    # @apartment.user = current_user
     if @apartment.save
       redirect_to apartment_path(@apartment)
     else
