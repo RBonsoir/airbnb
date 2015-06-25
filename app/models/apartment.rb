@@ -13,8 +13,11 @@ class Apartment < ActiveRecord::Base
   validates_attachment_content_type :picture,
     content_type: /\Aimage\/.*\z/
 
-  def self.search(query)
-    # where(:title, query) -> This would return an exact match of the query
-    where("title like ?", "%#{query}%")
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
   end
 end

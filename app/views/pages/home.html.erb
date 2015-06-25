@@ -6,20 +6,22 @@
 
   <div class="searchbar">
     <div class="row">
-          <div >
-              <div id="container">
-                <form action='/' class="form-inline">
-                  <input type='text' class='form-control' placeholder='city'>
-                  <input type='text' class='form-control' placeholder='check-in'>
-                  <input type='text' class='form-control' placeholder='check-out'>
-                  <input type='text' class='form-control' placeholder='capacity'>
-                  <input type='search' value='search' class= 'btn btn-danger'>
-                </form>
-              </div>
-          </div>
+      <%= form_tag("/apartments", method: "get", class: "form-inline") do %>
+        <%= text_field_tag :city, params[:search], placeholder: "City", class: 'form-control'%>
+        <%= date_field_tag :check_in, params[:search], placeholder: "Check-in", class: 'form-control' %>
+        <%= date_field_tag :check_out, params[:search], placeholder: "Check-out", class: 'form-control' %>
+        <%= text_field_tag :capacity, params[:search], placeholder: "Capacity", class: 'form-control' %>
+        <%= submit_tag "Search", class: 'btn btn-danger'%>
+      <% end %>
+      <!-- <form action='/' class="form-inline">
+        <input type='search' class='form-control' placeholder='city'>
+        <input type='search' class='form-control' placeholder='check-in'>
+        <input type='search' class='form-control' placeholder='check-out'>
+        <input type='search' class='form-control' placeholder='capacity'>
+        <input type='submit' value='search' class= 'btn btn-danger'>
+      </form> -->
     </div>
   </div>
-
 </div>
 
 

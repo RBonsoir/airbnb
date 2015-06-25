@@ -6,25 +6,36 @@
     <div class="col-sm-2 col-md-12">
       <div id="search-index">
         <div class="entire-form">
-          <form class= "form-inline">
+          <%= form_tag("/apartments", method: "get", class: "form-inline") do %>
+            <%= label_tag "Dates" %>
+            <%= date_field_tag :check_in, params[:search], placeholder: "Check-in", class: 'form-control' %>
+            <%= date_field_tag :check_out, params[:search], placeholder: "Check-out", class: 'form-control' %>
+            <%= submit_tag "Search", class: 'btn btn-danger'%>
+          <% end %>
+          <!-- <form class= "form-inline">
             <div class="form-group">
-              <label for="exampleInputEmail1" class="form-search">Dates</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check-in">
+              <label for="date" class="form-search">Dates</label>
+              <input type="date" class="form-control" id="date" placeholder="Check-in">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Check-out">
+              <input type="date" class="form-control" placeholder="Check-out">
             </div>
-          </form>
+          </form> -->
         </div>
         <div class="col-sm-2 col-md-12">
           <div class="entire-form">
             <form class= "form-inline">
               <div class="form-group">
-                <label for="exampleInputEmail1" class="form-search">Room type</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check-in">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Check-out">
+                <%= form_tag("/apartments", method: "get", class: "form-inline") do %>
+                  <%= text_field_tag :capacity, params[:search], placeholder: "Capacity", class: 'form-control' %>
+                  <%= submit_tag "Search", class: 'btn btn-danger'%>
+                <% end %>
+                <!-- <select class="form-control" id="sel1">
+                  <option>Capacity</option>
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                </select> -->
               </div>
             </form>
           </div>
