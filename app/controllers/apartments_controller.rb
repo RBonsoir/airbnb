@@ -17,7 +17,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
-    # @apartment_coordinates = { lat: @apartment.lat, lng: @apartment.lng }
+    @apartment_coordinates = { lat: @apartment.lat, lng: @apartment.lng }
   end
 
   def index
