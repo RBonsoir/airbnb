@@ -25,13 +25,17 @@
           <p>List of apartments + ouverture vers proposition de location et possibilité de cocher
           </p>
         <p><%= link_to "Add an apartment", new_apartment_path %></p>
-
       </div>
       <div class= "col-xs-12 col-sm-4">
         <h3><i class="fa fa-suitcase"></i>  Your vacation</h3>
-        <p>
-          Insert your vacation requests
-        </p>
+        <ul>
+          <li>
+            <% current_user.reservations.all.each do |reservation| %>
+            <%= reservation.apartment.title %> :
+            <%= reservation.state %>
+            <% end %>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
