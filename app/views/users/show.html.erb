@@ -29,12 +29,11 @@
       <div class= "col-xs-12 col-sm-4">
         <h3><i class="fa fa-suitcase"></i>  Your vacation</h3>
         <ul>
-          <li>
             <% current_user.reservations.all.each do |reservation| %>
-            <%= reservation.apartment.title %> :
-            <%= reservation.state %>
-            <% end %>
-          </li>
+              <li><%= link_to reservation.apartment.title, reservation_path %> :
+                  <%= reservation.checkin_on %> - <%= reservation.checkout_on %>
+              <% end %>
+              </li>
         </ul>
       </div>
     </div>

@@ -1,2 +1,13 @@
-<h1>Reservations#show</h1>
-<p>Find me in app/views/reservations/show.html.erb</p>
+<div class="container bkg-grey">
+  <div class="card-white">
+    <h2>Your reservation</h2>
+      <p><%= @reservation.apartment.picture %></p>
+      <p><%= @reservation.apartment.title %></p>
+      <p><%= @reservation.apartment.address %></p>
+      <p>From : <%= @reservation.checkin_on %></p>
+      <p>To : <%= @reservation.checkout_on %></p>
+      <div class="form-actions" id="cancelbutton">
+        <p>add cancel button</p>
+      </div>
+    </div>
+</div>
