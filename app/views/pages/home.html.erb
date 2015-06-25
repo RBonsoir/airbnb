@@ -8,13 +8,20 @@
     <div class="row">
           <div >
               <div id="container">
-                <form action='/' class="form-inline">
-                  <input type='text' class='form-control' placeholder='city'>
-                  <input type='text' class='form-control' placeholder='check-in'>
-                  <input type='text' class='form-control' placeholder='check-out'>
-                  <input type='text' class='form-control' placeholder='capacity'>
-                  <input type='search' value='search' class= 'btn btn-danger'>
-                </form>
+                <%= form_tag("/search", method: "get") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "City"%>
+                  <%= date_field_tag :search, params[:search], placeholder: "Check-in" %>
+                  <%= date_field_tag :search, params[:search], placeholder: "Check-out" %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Capacity" %>
+                  <%= submit_tag("Search") %>
+                <% end %>
+                <!-- <form action='/' class="form-inline">
+                  <input type='search' class='form-control' placeholder='city'>
+                  <input type='search' class='form-control' placeholder='check-in'>
+                  <input type='search' class='form-control' placeholder='check-out'>
+                  <input type='search' class='form-control' placeholder='capacity'>
+                  <input type='submit' value='search' class= 'btn btn-danger'>
+                </form> -->
               </div>
           </div>
     </div>

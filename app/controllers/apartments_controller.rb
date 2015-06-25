@@ -23,6 +23,11 @@ class ApartmentsController < ApplicationController
   def index
     @apartments = Apartment.all
     @reservation = Reservation.new
+    if params[:search]
+      @apartments = Apartment.search(params[:search]).order("created_at DESC")
+    else
+      @apartments = Apartment.order("created_at DESC")
+    end
     @markers = Gmaps4rails.build_markers(@apartments) do |apartment, marker|
       marker.lat apartment.latitude
       marker.lng apartment.longitude
