@@ -16,27 +16,29 @@
             </div>
           </form>
         </div>
-      </div>
-    </div>
-    <div class="col-sm-2 col-md-12">
-      <div id="search-index">
-        <div class="entire-form">
-          <form class= "form-inline">
-            <div class="form-group">
-              <label for="exampleInputEmail1" class="form-search">Room type</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check-in">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Check-out">
-            </div>
-          </form>
+        <div class="col-sm-2 col-md-12">
+          <div class="entire-form">
+            <form class= "form-inline">
+              <div class="form-group">
+                <label for="exampleInputEmail1" class="form-search">Room type</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Check-in">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Check-out">
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
     <% @apartments.each do |apartment| %>
       <div class="col-sm-2 col-md-6">
         <div class="card">
-          <%= image_tag "http://lorempixel.com/300/300", class: "img-card" %>
+          <% if apartment.picture? %>
+            <%= image_tag apartment.picture.url(:medium) %>
+          <% else %>
+            <%= image_tag 'http://placehold.it/300x250', class: "img-card" %>
+          <% end %>
           <div class="description">
             <p><%= link_to apartment.title, apartment_path(apartment) %></p>
             <p><%= apartment.description%></p>
@@ -75,6 +77,4 @@
     </div>
   </div>
 </div>
-
-
 <!-- image_tag apartment.picture.url(:medium) -->
