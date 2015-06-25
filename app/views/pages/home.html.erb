@@ -8,11 +8,11 @@
     <div class="row">
           <div >
               <div id="container">
-                <%= form_tag("/search", method: "get") do %>
-                  <%= text_field_tag :search, params[:search], placeholder: "City"%>
-                  <%= date_field_tag :search, params[:search], placeholder: "Check-in" %>
-                  <%= date_field_tag :search, params[:search], placeholder: "Check-out" %>
-                  <%= text_field_tag :search, params[:search], placeholder: "Capacity" %>
+                <%= form_tag("/apartments", method: "get") do %>
+                  <%= text_field_tag :city, params[:search], placeholder: "City"%>
+                  <%= date_field_tag :check_in, params[:search], placeholder: "Check-in" %>
+                  <%= date_field_tag :check_out, params[:search], placeholder: "Check-out" %>
+                  <%= text_field_tag :capacity, params[:search], placeholder: "Capacity" %>
                   <%= submit_tag("Search") %>
                 <% end %>
                 <!-- <form action='/' class="form-inline">

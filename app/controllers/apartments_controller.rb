@@ -23,8 +23,9 @@ class ApartmentsController < ApplicationController
   def index
     @apartments = Apartment.all
     @reservation = Reservation.new
-    if params[:search]
-      @apartments = Apartment.search(params[:search]).order("created_at DESC")
+
+    if params[:city]
+      @apartments = Apartment.near(params[:city], 5).order("created_at DESC")
     else
       @apartments = Apartment.order("created_at DESC")
     end
