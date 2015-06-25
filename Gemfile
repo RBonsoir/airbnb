@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem "geocoder"
+
 gem "gmaps4rails"
 gem "rails-assets-underscore"
 
