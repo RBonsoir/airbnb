@@ -14,7 +14,12 @@
         <h3><i class="fa fa-usd"></i>  Rent your flat</h3>
         <ul>
           <% current_user.apartments.all.each do |apartment| %>
-            <li><%= link_to apartment.title, apartment_path %></li>
+            <li>
+              <% if current_user = apartment.user %>
+              <%= link_to apartment.title, edit_apartment_path %>
+              <% else link_to apartment.title, apartment_path %>
+              <% end %>
+            </li>
             <% end %>
         </ul>
           <p>List of apartments + ouverture vers proposition de location et possibilité de cocher
