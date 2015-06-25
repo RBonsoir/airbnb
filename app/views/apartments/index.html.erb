@@ -35,7 +35,7 @@
       <div class="col-sm-2 col-md-6">
         <div class="card">
           <% if apartment.picture? %>
-            <%= image_tag @apartment.picture.url(:medium) %>
+            <%= image_tag apartment.picture.url(:medium) %>
           <% else %>
             <%= image_tag 'http://placehold.it/300x250', class: "img-card" %>
           <% end %>
