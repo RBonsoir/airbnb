@@ -17,7 +17,7 @@ class ApartmentsController < ApplicationController
   end
 
   def show
-    @apartment_coordinates = { lat: @apartment.lat, lng: @apartment.lng }
+    @apartment_coordinates = { lat: @apartment.latitude, lng: @apartment.longitude }
   end
 
   def index
@@ -50,7 +50,7 @@ class ApartmentsController < ApplicationController
   end
 
   def apartment_params
-    params.require(:apartment).permit(:title, :address, :price, :city, :picture)
+    params.require(:apartment).permit(:title, :description, :address, :price, :picture)
   end
 end
 
