@@ -4,6 +4,7 @@ class Apartment < ActiveRecord::Base
   validates :title, presence: true
   validates :address, presence: true
   validates :price, presence: true
+  validates :city, presence: true
   # validates :picture1, presence: true
 
   has_attached_file :picture,
