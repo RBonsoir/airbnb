@@ -30,6 +30,8 @@ gem "geocoder"
 gem "gmaps4rails"
 gem "rails-assets-underscore"
 
+gem "geocoder"
+
 ruby '2.2.2'
 gem 'rails_12factor', group: :production
 gem 'puma', group: :production
