@@ -26,13 +26,9 @@ class ApartmentsController < ApplicationController
     @reservation = Reservation.new
 
     if params[:city].present?
-      @apartments = Apartment.near(params[:city], 5).order("created_at DESC")
-      if @apartments.empty?
-        flash[:error] = "Could not find anything"
-      end
-    else
-      @apartments = Apartment.order("created_at DESC")
+      @apartments = @apartments.near(params[:city], 5)
     end
+
 
     if params[:check_in].present?
       @apartments = Apartment.where(:check_in == params[:checkin_on]).order("created_at DESC")
