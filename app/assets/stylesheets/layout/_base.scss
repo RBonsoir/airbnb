@@ -28,12 +28,21 @@ body {
  .card {
   position: relative;
   margin-bottom: 20px;
-  margin-left: 20px;
+  margin-left: 5px;
   padding: 10px;
+
+  img {
+    width: 300px;
+    height: 250px;
+  }
  }
 
  .img-card {
   border-radius: 4px;
+ }
+
+ #search-index {
+  background: white;
  }
 
  .form-search {
@@ -41,9 +50,9 @@ body {
  }
 
  .entire-form {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  background: white;
   padding-left: 30px;
+  padding-top: 10px;
   padding-bottom: 20px;
   border-bottom: 1px solid #DCDCDC;
  }
@@ -68,7 +77,7 @@ body {
     }
   }
 
- .fa {
+ #icon-show {
   font-size: 40px;
   padding-top: 15px;
  }

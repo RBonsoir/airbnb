@@ -1,7 +1,16 @@
 <div class="img-show">
-  <%= image_tag 'http://lorempixel.com/1200/400', class: "img-show" %>
+  <%= image_tag @apartment.picture.url(:large), class: "img-show" %>
   <!-- @apartment.picture.url(:large) -->
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+      var coord = <%= raw @apartment_coordinates %>;
+      alert('Apartment coordinates are ' + coord.lat + ', ' + coord.lng);
+    });
+  <% end %>
+<% end %>
 
 <div id="info-show">
   <div class="container">
@@ -9,7 +18,7 @@
       <div class="col-xs-12 col-md-3">
 
         <div class="img-circle text-center" id="user-pic-show">
-          <%= image_tag @apartment.user.picture, class: "img-circle" %>
+          <%= image_tag @apartment.user.picture.url(:thumb), class: "img-circle" %>
         </div>
         <div class="text-center" id="user-pic-show">
           <%= @apartment.user.name %>
@@ -24,13 +33,13 @@
       </div>
       <div class="col-xs-12 col-md-2">
         <div>
-          <h3><i class="fa fa-home"></i></h3>
+          <h3><i class="fa fa-home" id= "icon-show"></i></h3>
           <p><%= @apartment.description %></p>
         </div>
       </div>
       <div class="col-xs-12 col-md-2">
         <div class="button-show">
-          <%= link_to "Book", new_reservation_path, {class: "btn btn-primary"} %>
+          <%= link_to "Book", new_apartment_reservation_path(@apartment), {class: "btn btn-primary"} %>
         </div>
       </div>
     </div>

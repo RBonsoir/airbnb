@@ -6,3 +6,4 @@ Paperclip::Attachment.default_options[:s3_credentials] = {
   access_key_id:      ENV['AWS_ACCESS_KEY_ID'],     #  |- DO NOT replace this
   secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY']  # /
 }
+
