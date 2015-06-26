@@ -15,7 +15,12 @@
         <ul>
           <% current_user.apartments.each do |apartment| %>
             <li>
-              <%= link_to apartment.title, apartment_path(apartment) %>
+              <%= link_to apartment.title, apartment_path(apartment) %> -
+              <% if apartment.rented == false %>
+                <%= "Free" %>
+              <% else %>
+                <%= link_to "Rented", reservation_path(apartment) %>
+              <% end %>
             </li>
             <% end %>
         </ul>
