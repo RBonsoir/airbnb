@@ -1,6 +1,6 @@
 class Apartment < ActiveRecord::Base
   belongs_to :user
-  has_many :reservations
+  has_many :reservations, dependent: :destroy
   validates :title, presence: true
   validates :address, presence: true
   validates :price, presence: true
