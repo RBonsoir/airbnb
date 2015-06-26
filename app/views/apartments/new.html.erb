@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <div class="text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="apartment-form">
+        <h2>Add your apartment</h2>
         <%= form_for [@apartment] do |f| %>
           <p><%= f.text_field :title, placeholder: "title" %></p>
           <p><%= f.text_field :address, placeholder: "address" %></p>
