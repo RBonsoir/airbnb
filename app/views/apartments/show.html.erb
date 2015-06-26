@@ -1,7 +1,7 @@
 <div>
   <div>
     <% if @apartment.picture? %>
-      <%= image_tag @apartment.picture.url(:medium), class: "img-show" %>
+      <%= image_tag @apartment.picture.url(:large), class: "img-show" %>
     <% else %>
       <div id="no-photo">
         <h2>No photo available</h2>
