@@ -1,58 +1,60 @@
 <div>
-  <% if @apartment.picture? %>
-    <%= image_tag @apartment.picture.url(:medium), class: "img-show" %>
-  <% else %>
-    <div id="no-photo">
-      <h2>No photo available</h2>
-    </div>
-    <%#= image_tag 'http://placehold.it/1500x400', class: "img-show" %>
+  <div>
+    <% if @apartment.picture? %>
+      <%= image_tag @apartment.picture.url(:medium), class: "img-show" %>
+    <% else %>
+      <div id="no-photo">
+        <h2>No photo available</h2>
+      </div>
+      <%#= image_tag 'http://placehold.it/1500x400', class: "img-show" %>
+    <% end %>
+
+    <%#= image_tag @apartment.picture.url(:large), class: "img-show" %>
+    <!-- @apartment.picture.url(:large) -->
+  </div>
+
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).ready(function() {
+        var coord = <%= raw @apartment_coordinates %>;
+        alert('Apartment coordinates are ' + coord.lat + ', ' + coord.lng);
+      });
+    <% end %>
   <% end %>
 
-  <%#= image_tag @apartment.picture.url(:large), class: "img-show" %>
-  <!-- @apartment.picture.url(:large) -->
-</div>
+  <div id="info-show">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-3">
 
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var coord = <%= raw @apartment_coordinates %>;
-      alert('Apartment coordinates are ' + coord.lat + ', ' + coord.lng);
-    });
-  <% end %>
-<% end %>
+          <div class="img-circle text-center" id="user-pic-show">
+            <%= image_tag @apartment.user.picture.url(:thumb), class: "img-circle" %>
+          </div>
+          <div class="text-center" id="user-pic-show">
+            <%= @apartment.user.name %>
+          </div>
+        </div>
 
-<div id="info-show">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-3">
-
-        <div class="img-circle text-center" id="user-pic-show">
-          <%= image_tag @apartment.user.picture.url(:thumb), class: "img-circle" %>
+        <div class="col-xs-12 col-md-4">
+          <div id="heading-show">
+            <h3><%= @apartment.title %></h3>
+            <p><%= @apartment.address %></p>
+          </div>
         </div>
-        <div class="text-center" id="user-pic-show">
-          <%= @apartment.user.name %>
+        <div class="col-xs-12 col-md-2">
+          <div>
+            <h3><i class="fa fa-home" id= "icon-show"></i></h3>
+            <p><%= @apartment.description %></p>
+          </div>
         </div>
-      </div>
-
-      <div class="col-xs-12 col-md-4">
-        <div id="heading-show">
-          <h3><%= @apartment.title %></h3>
-          <p><%= @apartment.address %></p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-2">
-        <div>
-          <h3><i class="fa fa-home" id= "icon-show"></i></h3>
-          <p><%= @apartment.description %></p>
-        </div>
-      </div>
-      <div class="col-xs-12 col-md-2">
-        <div class="button-show">
-          <% if current_user != @apartment.user %>
-            <%= link_to "Book", new_apartment_reservation_path(@apartment), { class: "btn btn-primary" } %>
-            <% else %>
-            <%= link_to "Edit apartment page", edit_apartment_path(@apartment), { class: "btn btn-primary" } %>
-          <% end %>
+        <div class="col-xs-12 col-md-2">
+          <div class="button-show">
+            <% if current_user != @apartment.user %>
+              <%= link_to "Book", new_apartment_reservation_path(@apartment), { class: "btn btn-primary" } %>
+              <% else %>
+              <%= link_to "Edit apartment page", edit_apartment_path(@apartment), { class: "btn btn-primary" } %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
