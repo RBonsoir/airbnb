@@ -1,19 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="reservation-form window-height">
-        <h2>Edit your apartment</h2>
-        <%= form_for [@apartment] do |f| %>
-          <p><%= f.text_field :title %></p>
-          <p><%= f.text_field :address %></p>
-          <p><%= f.text_field :description %></p>
-          <p><%= f.text_field :capacity %></p>
-          <p><%= f.text_field :price %></p>
-          <p><%= f.label :picture %></p>
-          <p><%= f.file_field :picture, class: "button-picture" %></p>
-          <p><%= f.submit "Update", class: "btn btn-primary" %></p>
-        <% end %>
-        <%= link_to "Delete Apartment", apartment_path(@apartment), method: :delete, data: { confirm: "Are you sure?" } %>
+<div class="window-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="reservation-form">
+          <h2>Edit your apartment</h2>
+          <%= form_for [@apartment] do |f| %>
+            <p><%= f.text_field :title %></p>
+            <p><%= f.text_field :address %></p>
+            <p><%= f.text_field :description %></p>
+            <p><%= f.text_field :capacity %></p>
+            <p><%= f.text_field :price %></p>
+            <p><%= f.label :picture %></p>
+            <p><%= f.file_field :picture, class: "button-picture" %></p>
+            <p><%= f.submit "Update", class: "btn btn-primary" %></p>
+          <% end %>
+          <%= link_to "Delete Apartment", apartment_path(@apartment), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
       </div>
     </div>
   </div>
