@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.build(reservation_params)
     @reservation.apartment = @apartment
     @reservation.save
-    @apartment.rented == true
+    @apartment.update(rented: true)
     redirect_to reservation_path(@reservation)
   end
 
