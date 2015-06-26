@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
   end
 
   def destroy
-    @reservation = reservation.find(params[:id])
+    @reservation = Reservation.find(params[:id])
     @reservation.destroy
     redirect_to user_path(current_user)
   end
@@ -29,11 +29,3 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:state, :checkin_on, :checkout_on)
   end
 end
-
-# on an apartment show page
-# click on "book" button
-# creates a new reservation, linked to apartment_id and user_id (renter)
-# state is : pending
-# redirects to user profile (the reservation appears on the right)
-# user(renter) show page: shows the reservation on the left
-# possibility to click on the

@@ -1,19 +1,21 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4 col-sm-offset-4">
-      <h2>Confirm the reservation</h2>
-      <%= simple_form_for([@apartment, @reservation]) do |f| %>
-        <%= f.error_notification %>
+      <div class="reservation-form">
+        <h2>Confirm the reservation</h2>
+        <%= simple_form_for([@apartment, @reservation]) do |f| %>
+          <%= f.error_notification %>
 
-        <div class="form-inputs">
-          <%= f.input :checkin_on, input_html: {class: "form-control"} %>
-          <%= f.input :checkout_on, input_html: {class: "form-control"} %>
-        </div>
+          <div class="form-inputs">
+            <%= f.input :checkin_on, input_html: {class: "form-control"} %>
+            <%= f.input :checkout_on, input_html: {class: "form-control"} %>
+          </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Confirm reservation", class: "btn btn-primary" %>
-        </div>
-      <% end %>
+          <div class="form-actions">
+            <%= f.button :submit, "Confirm reservation", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

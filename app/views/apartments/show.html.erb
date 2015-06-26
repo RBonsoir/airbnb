@@ -1,5 +1,14 @@
-<div class="img-show">
-  <%= image_tag @apartment.picture.url(:large), class: "img-show" %>
+<div>
+  <% if @apartment.picture? %>
+    <%= image_tag @apartment.picture.url(:medium), class: "img-show" %>
+  <% else %>
+    <div id="no-photo">
+      <h2>No photo available</h2>
+    </div>
+    <%#= image_tag 'http://placehold.it/1500x400', class: "img-show" %>
+  <% end %>
+
+  <%#= image_tag @apartment.picture.url(:large), class: "img-show" %>
   <!-- @apartment.picture.url(:large) -->
 </div>
 
@@ -39,7 +48,11 @@
       </div>
       <div class="col-xs-12 col-md-2">
         <div class="button-show">
-          <%= link_to "Book", new_apartment_reservation_path(@apartment), {class: "btn btn-primary"} %>
+          <% if current_user != @apartment.user %>
+            <%= link_to "Book", new_apartment_reservation_path(@apartment), { class: "btn btn-primary" } %>
+            <% else %>
+            <%= link_to "Edit apartment page", edit_apartment_path(@apartment), { class: "btn btn-primary" } %>
+          <% end %>
         </div>
       </div>
     </div>
