@@ -1,18 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <div class="text-center window-height reservation-form">
-        <h2>Add your apartment</h2>
-        <%= form_for [@apartment] do |f| %>
-          <p><%= f.text_field :title, placeholder: "title" %></p>
-          <p><%= f.text_field :address, placeholder: "address" %></p>
-          <p><%= f.text_field :description, placeholder: "description" %></p>
-          <p><%= f.text_field :capacity, placeholder: "capacity" %></p>
-          <p><%= f.text_field :price, placeholder: "price per night" %></p>
-          <p><%= f.label :picture %></p>
-          <p><%= f.file_field :picture, class: "button-picture" %></p>
-          <p><%= f.submit %></p>
-        <% end %>
+<div class="window-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="reservation-form">
+          <h2>Add your apartment</h2>
+          <%= form_for [@apartment] do |f| %>
+            <p><%= f.text_field :title, placeholder: "title" %></p>
+            <p><%= f.text_field :address, placeholder: "address" %></p>
+            <p><%= f.text_field :description, placeholder: "description" %></p>
+            <p><%= f.text_field :capacity, placeholder: "capacity" %></p>
+            <p><%= f.text_field :price, placeholder: "price per night" %></p>
+            <p><%= f.label :picture %></p>
+            <p><%= f.file_field :picture, class: "button-picture" %></p>
+            <p><%= f.submit %></p>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
