@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:new, :create]
   end
 
-  resources :reservations, only: [:show]
+  resources :reservations, only: [:show, :destroy]
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 

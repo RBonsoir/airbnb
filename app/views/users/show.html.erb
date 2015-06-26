@@ -13,27 +13,22 @@
       <div class= "col-xs-12 col-sm-4">
         <h3><i class="fa fa-usd"></i>  Rent your flat</h3>
         <ul>
-          <% current_user.apartments.all.each do |apartment| %>
+          <% current_user.apartments.each do |apartment| %>
             <li>
-              <% if current_user = apartment.user %>
-              <%= link_to apartment.title, edit_apartment_path %>
-              <% else link_to apartment.title, apartment_path %>
-              <% end %>
+              <%= link_to apartment.title, apartment_path(apartment) %>
             </li>
             <% end %>
         </ul>
-          <p>List of apartments + ouverture vers proposition de location et possibilité de cocher
-          </p>
         <p><%= link_to "Add an apartment", new_apartment_path %></p>
       </div>
       <div class= "col-xs-12 col-sm-4">
         <h3><i class="fa fa-suitcase"></i>  Your vacation</h3>
         <ul>
-            <% current_user.reservations.all.each do |reservation| %>
-              <li><%= link_to reservation.apartment.title, reservation_path %> :
-                  <%= reservation.checkin_on %> - <%= reservation.checkout_on %>
-              <% end %>
-              </li>
+          <% current_user.reservations.each do |reservation| %>
+            <li><%= link_to reservation.apartment.title, reservation_path(reservation) %> :
+                <%= reservation.checkin_on %> - <%= reservation.checkout_on %>
+            <% end %>
+            </li>
         </ul>
       </div>
     </div>

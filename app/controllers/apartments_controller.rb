@@ -1,5 +1,5 @@
 class ApartmentsController < ApplicationController
-  before_action :find_apartment, only: [:show, :edit, :update]
+  before_action :find_apartment, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:index, :show]
   def new
     @apartment = Apartment.new
@@ -84,6 +84,11 @@ class ApartmentsController < ApplicationController
   def update
     @apartment.update(apartment_params)
     redirect_to apartment_path(@apartment)
+  end
+
+  def destroy
+    @apartment.destroy
+    redirect_to user_path(current_user)
   end
 
   private

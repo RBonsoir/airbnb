@@ -20,3 +20,21 @@
 #cancelbutton {
   align-bottom: 30px;
 }
+
+.reservation-form {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  background-color: white;
+  text-align: center;
+  padding: 38px;
+  /* margin: 30px auto; */
+  margin-top: 30px;
+  margin-bottom: 30px;
+  h2 {
+    font-size: 25px;
+    border-bottom: 1px;
+    margin-bottom: 20px;
+    margin-top: -12px;
+    font-decorate: underline;
+  }
+}
